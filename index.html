@@ -20,7 +20,54 @@
         <section class="full d-flex justify-content-center align-items-center"
             style="background-color: #F8BBD0; color: #fff">
             <div class="text-center">
-                <h1>Adicione um banner maneiro aqui</h1>
+                <div class="slider">
+                    <div class="slides">
+                    <!--Radio Buttons-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <!--Fim Radio Buttons-->
+                
+                    <!-- Slide Images-->
+                    <div class="slide first">
+                        <img src="https://c4.wallpaperflare.com/wallpaper/10/309/175/maroon-5-band-members-look-wallpaper-preview.jpg" alt="imagem 1">
+                    </div>
+        
+                    <div class="slide">
+                        <img src="https://c4.wallpaperflare.com/wallpaper/973/966/342/slipknot-wallpaper-preview.jpg" alt="imagem 2">
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="https://disneyplusbrasil.com.br/wp-content/uploads/2022/11/Elton-John-O-Show-da-Despedida-Disney-Plus.jpg" alt="imagem 3">
+                    </div>
+        
+                    <div class="slide">
+                        <img src="https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2022-09/Coldplay%20003%20-%20credit%20James%20Marcus%20Haney%20%28%40marcushaney%29%20%5BWEB-RES%5D.jpg?itok=toIsgvhl" alt="imagem 4">
+                    </div>
+        
+                
+                    <!-- Fim Slide images-->
+        
+                    <!--Navigation auto-->
+                    <div class="navition-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+        
+                    </div>
+        
+        
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        
+                    </div>
+                </div>
             </div>
         </section>
         <section class="full">
@@ -29,7 +76,22 @@
             </div>
             <div id="idDiv" class="container d-flex justify-content-center align-items-center">
                 
-
+                <div id="fade" class="hide"></div>
+                <div id="modal" class="hide">
+                  <div class="modal-header">
+                    <h2>Reserve seu ingresso</h2>
+                    <button id="close-modal">Fechar</button>
+                  </div>
+                  <div class="modal-body">
+                    <form onsubmit="reservaIngresso()">
+                      <label for="owner_name">Nome:</label><br>
+                      <input type="text" id="owner_name" name="owner_name"><br><br>
+                      <label for="owner_email">Email:</label><br>
+                      <input type="email" id="owner_email" name="owner_email"> <br> <br>
+                      <input class="submit" type="submit" id="submit" name="submit" value="finalizar">
+                    </form>
+                  </div>
+                </div>
                
             </div>
             <div class="container text-center">
@@ -84,7 +146,7 @@
             </nav>
         </div>
     </footer>
-    <script src="rodrigo/index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

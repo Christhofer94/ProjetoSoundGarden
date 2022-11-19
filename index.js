@@ -1,3 +1,66 @@
+// MODAL
+
+
+
+const openModalButton = document.querySelector("a");
+const closeModalButton = document.querySelector("#close-modal");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
+
+const toggleModal = () => {
+  modal.classList.toggle("hide")
+  fade.classList.toggle("hide")
+};
+
+[closeModalButton, fade].forEach((el) => {
+  el.addEventListener("click", () => toggleModal())
+});
+
+
+
+// POST
+
+
+
+function fazPost(url, body){
+  console.log("body", body)
+  let request = new XMLHttpRequest() 
+  request.open("GET", url, true)
+  request.setRequestHeader("Content-type", "application/json")
+  request.send(JSON.stringify(body))
+  
+
+  request.onload = function() {
+      console.log(this.responseText)
+  }
+
+  return request.responseText
+}
+
+
+function reservaIngresso() {
+  event.preventDefault()
+  let url = "https://xp41-soundgarden-api.herokuapp.com/bookings"
+  let owner_name = document.getElementById("owner_name").value
+  let owner_email = document.getElementById("owner_email").value
+  console.log(owner_name)
+  console.log(owner_email)
+
+
+
+  body = {
+      "owner_name": owner_name,
+      "owner_email": owner_email,
+      "number_tickets": 1,
+      "event_id": ""
+  }
+
+  fazPost(url, body)
+} 
+
+
+
+
 const containerShow = document.querySelector("#idDiv")
 
 async function getShow() {
@@ -31,6 +94,7 @@ async function getShow() {
       link.classList.add("btn")
       link.classList.add("btn-primary")
       link.innerText = "reservar ingresso"
+      link.addEventListener("click", toggleModal)
       
    
       article.appendChild(name);
@@ -85,3 +149,18 @@ async function getShow() {
 getShow();
 
 
+let count = 1
+document.getElementById("radio1").checked = true;
+
+setInterval( function(){
+  nextImage();
+}, 3000)
+
+function nextImage(){
+  count++
+  if(count>4){
+    count=1;
+  }
+document.getElementById("radio"+count).checked = true;
+
+}
